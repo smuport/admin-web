@@ -7,7 +7,13 @@ const port = '80';
 export const localUrl = `http://127.0.0.1:4000`;
 
 export const environment = {
-  company: 'ssict',
+  company: 'nict',
+  enableAdditionCaptcha: true,
+  // 系统代码映射
+  systemCodeMap: {
+    1: '堆场系统',
+    2: '配载系统',
+  },
   inAim: {
     E: { name: '出口', color: 'green' },
     I: { name: '进口', color: 'red' },
@@ -61,9 +67,10 @@ export const environment = {
     editIcon: true,
   },
   production: false,
-  managerBaseUrl: 'http://127.0.0.1:4000',
+  managerBaseUrl: 'http://127.0.0.1:4001',
   companyLogoUrl: '/assets/images/logo_small.png',
-  webTitle: '上海海事大学<br>智能堆场管理系统',
-  // managerBaseUrl: ' http://192.168.199.135:4000',
-  coreBaseUrl: 'http://127.0.0.1:5000',
+  webTitle: '上海海事大学',
+  // managerBaseUrl: ' http://10.197.1.203:4000', // 生产库
+  coreBaseUrl: 'http://10.197.1.200:5000',
+  // coreBaseUrl: 'http://192.168.199.141:5001'
 };
