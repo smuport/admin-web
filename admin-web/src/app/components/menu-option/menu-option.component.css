@@ -1,0 +1,241 @@
+/* 使用系统字体替代外部字体导入，避免网络连接问题 */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700'); */
+/* @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i'); */
+
+/* *{
+  box-sizing: border-box;
+}
+
+body, html {
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+  width: 100%;
+height: 100%;
+    padding: 0;
+}
+
+body {
+  background-color: #D2DBDD;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  align-items: center;
+} */
+
+.cards {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center; /* 水平居中 */
+    -webkit-justify-content: center;
+    align-items: center; /* 垂直居中 */
+    -webkit-align-items: center;
+    max-width: 1220px;
+    height: 88vh; /* 设置容器高度为视口高度 */
+    margin: 0 auto; /* 容器本身水平居中 */
+}
+
+.card--1 .card__img, .card--1 .card__img--hover {
+    background-image: url('https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card--2 .card__img, .card--2 .card__img--hover {
+    background-image: url('https://images.pexels.com/photos/307008/pexels-photo-307008.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+}
+
+.card__like {
+    width: 18px;
+}
+
+.card__clock {
+    width: 15px;
+  vertical-align: middle;
+    fill: #1890ff;
+}
+.card__time {
+    font-size: 12px;
+    color: #1890ff;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.card__clock-info {
+    float: right;
+}
+
+.card__img {
+  visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 335px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+  
+}
+
+.card__info-hover {
+    position: absolute;
+    padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.card__img--hover {
+  transition: 0.2s all ease-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+  position: absolute;
+    height: 335px;
+  border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+top: 0;
+  
+}
+.card {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #fff;
+    width: 33.3%;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
+}
+.card:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
+    transform: scale(1.10, 1.10);
+}
+
+.card__info {
+z-index: 2;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+border-bottom-right-radius: 12px;
+   padding: 16px 24px 24px 24px;
+}
+
+.card__category {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  color: #868686;
+}
+
+.card__title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.card__by {
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.card__author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #1890ff;
+}
+
+.card:hover .card__img--hover {
+    height: 100%;
+    opacity: 0.3;
+}
+
+.card:hover .card__info {
+    background-color: transparent;
+    position: relative;
+}
+
+.card:hover .card__info-hover {
+    opacity: 1;
+}
+
+/* 添加按钮卡片样式 */
+.card--add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* 将背景改为透明 */
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: none; /* 移除阴影 */
+}
+
+.add-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+
+.add-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: transparent; /* 将背景改为透明 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px dashed #1890ff;
+  transition: all 0.3s ease;
+}
+
+.plus-icon {
+  font-size: 40px;
+  color: #1890ff;
+  font-weight: 300;
+}
+
+.add-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #1890ff;
+  margin: 0;
+}
+
+.card--add:hover {
+  cursor: pointer;
+  box-shadow: none; /* 悬停时也不显示阴影 */
+  transform: scale(1.10, 1.10);
+}
+
+.card--add:hover .add-button {
+  background-color: rgba(173, 125, 82, 0.2); /* 悬停时使用半透明背景 */
+  border: 2px solid #1890ff;
+}
+
+.card--add:hover .plus-icon {
+  color: #1890ff; /* 保持原色 */
+}
+
+.card--add:hover .add-title {
+  color: #1890ff; /* 保持原色 */
+}
+
+/* 确保卡片水平均匀分布 */
+/* .cards {
+  justify-content: space-between;
+}
+
+.card {
+  margin-right: 0;
+} */
+
+/* 最后一个卡片不需要右边距 */
+.card:last-child {
+  margin-right: 0;
+}

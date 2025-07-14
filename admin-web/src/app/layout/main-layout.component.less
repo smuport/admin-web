@@ -1,0 +1,45 @@
+.main-layout-bg {
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    position: relative;
+}
+
+.main-layout-head-right-menu-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 64px; // 你可以根据实际需要调整
+    background: #fff;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    padding-right: 32px; // 右侧留点空
+    box-shadow: 0 2px 8px #f0f1f2;
+    border-bottom-left-radius: 8px;
+}
+
+.main-layout-home-icon {
+    cursor: pointer;
+    margin-right: 27px;
+}
+
+.main-layout-back-icon {
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.main-layout-head-right-menu-row {
+    width: 100%;
+    background: #fff;
+    min-height: 30px; // 可根据实际需要调整
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; // 让内容靠右
+    padding: 10px 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+:host ::ng-deep .ant-page-header {
+    padding: 6px 21px
+}

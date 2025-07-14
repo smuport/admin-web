@@ -1,0 +1,28 @@
+<div class="main-layout-bg">
+  <div class="main-layout-head-right-menu-row">
+    <app-layout-head-right-menu
+      style="width: 100%"
+    ></app-layout-head-right-menu>
+  </div>
+  <nz-radio-group
+    style="
+      padding-top: 10px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10px;
+    "
+    [(ngModel)]="radioValue"
+    nzButtonStyle="solid"
+    (ngModelChange)="radioChange()"
+  >
+    <label
+      *ngFor="let item of menuItems"
+      [nz-radio-button]="item.value"
+      [nzValue]="item.value"
+      [style.display]="item.visible(roleGrade, isSuperAdmin) ? '' : 'none'"
+    >
+      {{ item.label }}
+    </label>
+  </nz-radio-group>
+  <router-outlet></router-outlet>
+</div>
