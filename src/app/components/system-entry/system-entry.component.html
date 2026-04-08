@@ -1,0 +1,40 @@
+<div class="paper-background">
+  <div class="main-layout-head-right-menu-row">
+    <app-layout-head-right-menu
+      style="width: 100%"
+    ></app-layout-head-right-menu>
+    <button
+      *ngIf="isAdmin"
+      nz-button
+      nzType="primary"
+      nzGhost
+      (click)="goToAdmin()"
+    >
+      <span nz-icon nzType="setting"></span>
+      权限管理
+    </button>
+  </div>
+  <section class="cards">
+    <article
+      class="card"
+      *ngFor="let system of systems()"
+      [ngClass]="'card--' + system.id"
+      (click)="openSystem(system)"
+    >
+      <div
+        class="card__img"
+        [ngStyle]="{ 'background-image': 'url(' + system.imagePath + ')' }"
+      ></div>
+      <a class="card_link">
+        <div
+          class="card__img--hover"
+          [ngStyle]="{ 'background-image': 'url(' + system.imagePath + ')' }"
+        ></div>
+      </a>
+      <div class="card__info">
+        <span class="card__category">{{ system.nameEn }}</span>
+        <h2 class="card__title">{{ system.nameCn }}</h2>
+      </div>
+    </article>
+  </section>
+</div>
